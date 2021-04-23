@@ -7,6 +7,7 @@ const { NODE_ENV } = require("./config");
 const { CLIENT_ORIGIN } = require("./config");
 const locationsRouter = require("./locations/locations-router");
 const usersRouter = require("./users/users-router")
+const authRouter = require("./auth/auth-router")
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(
 
 app.use('/api/locations', locationsRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/auth', authRouter)
 
 
 app.use(function errorHandler(error, req, res, next) {
