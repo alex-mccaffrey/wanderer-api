@@ -5,6 +5,7 @@ const LocationsService = require("./locations-service");
 const locationsRouter = express.Router();
 const jsonParser = express.json();
 
+
 const serializeLocation = (location) => ({
   id: location.id,
   title: xss(location.title),
@@ -24,9 +25,9 @@ locationsRouter
   })
 
   .post(jsonParser, (req, res, next) => {
-    const { notes, title, modified } = req.body;
-    const newLocation = { notes, title, modified };
-    for (const field of ["title", "modified", "notes"]) {
+    const { notes, title, modified, user_id, member } = req.body;
+    const newLocation = { notes, title, modified, user_id, member };
+    for (const field of ["title", "modified", "notes", "member"]) {
       if (!req.body[field]) {
         return res.status(400).send({
           error: { message: `'${field}' is required` },

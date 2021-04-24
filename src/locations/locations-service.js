@@ -1,6 +1,10 @@
 const knex = require('knex')
 
 
-const locationsService = {
-    
+const LocationsService = {
+    getAllLocations(knex) {
+        return knex.select("*").from("locations");
+      },
 }
+
+module.exports = LocationsService;
