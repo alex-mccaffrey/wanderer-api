@@ -4,6 +4,7 @@ const xss = require("xss");
 const LocationsService = require("./locations-service");
 const locationsRouter = express.Router();
 const jsonParser = express.json();
+const { requireAuth } = require("../middleware/jwt-auth")
 
 
 const serializeLocation = (location) => ({
@@ -15,7 +16,7 @@ const serializeLocation = (location) => ({
 
 locationsRouter
   .route("/")
-  .get((req, res, next) => {
+  .get(requireAuth, (req, res, next) => {
     const knexInstance = req.app.get("db");
     LocationsService.getAllLocations(knexInstance)
       .then((locations) => {
@@ -27,7 +28,7 @@ locationsRouter
   .post(jsonParser, (req, res, next) => {
     const { notes, title, modified, user_id, member } = req.body;
     const newLocation = { notes, title, modified, user_id, member };
-    for (const field of ["title", "modified", "notes", "member"]) {
+    for (const field of ["user_id", "modified", "notes", "member", "latitude", "longitude"]) {
       if (!req.body[field]) {
         return res.status(400).send({
           error: { message: `'${field}' is required` },

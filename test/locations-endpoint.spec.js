@@ -21,9 +21,9 @@ describe("Locations Endpoints", () => {
     db.raw("TRUNCATE  users, locations RESTART IDENTITY CASCADE;")
   );
 
-  before("register and login", () => {
+  beforeEach("register and login", () => {
     let users = makeUsersArray();
-    supertest(app)
+    return supertest(app)
       .post("/api/users")
       .send(users[0])
       .then((res) => {
