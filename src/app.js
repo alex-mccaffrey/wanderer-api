@@ -5,7 +5,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const { NODE_ENV } = require("./config");
 const { CLIENT_ORIGIN } = require("./config");
-const locationsRouter = require("./locations/locations-router");
+const markersRouter = require("./markers/markers-router");
 const usersRouter = require("./users/users-router")
 const authRouter = require("./auth/auth-router")
 
@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-app.use('/api/locations', locationsRouter)
+app.use('/api/locations', markersRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
 
