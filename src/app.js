@@ -21,7 +21,8 @@ app.use(
   })
 );
 
-app.use('/api/locations', markersRouter)
+app.use(express.json())
+app.use('/api/markers', markersRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
 
