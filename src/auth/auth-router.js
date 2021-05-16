@@ -22,14 +22,14 @@ authRouter
     AuthService.getUserWithUsername(knexInstance, username).then((dbUser) => {
       if (!dbUser) {
         return res.status(400).json({
-          error: "Incorrect email or password",
+          error: "Incorrect username or password",
         });
       }
       AuthService.comparePasswords(password, dbUser.password).then(
         (isMatch) => {
           if (!isMatch) {
             return res.status(400).json({
-              error: "Incorrect email or password",
+              error: "Incorrect username or password",
             });
           }
           const subject = dbUser.username
