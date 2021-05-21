@@ -23,7 +23,6 @@ describe("Markers Endpoints", () => {
 
   beforeEach("register and login", () => {
     let user = { username: "authtestuser", password: "P@ssword12!" };
-    //let users = makeUsersArray();
     return supertest(app)
       .post("/api/users")
       .send(user)

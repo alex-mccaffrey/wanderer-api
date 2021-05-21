@@ -48,27 +48,4 @@ markersRouter
   });
 
 
-  // markersRouter
-  // .route("/:marker_id")
-  // .all((req, res, next) => {
-  //   const { marker_id } = req.params;
-  //   MarkersService.getById(req.app.get("db"), marker_id)
-  //     .then((marker) => {
-  //       if (!marker) {
-  //         return res.status(404).json({
-  //           error: { message: `Marker not Found` },
-  //         })
-  //       }
-  //       res.marker = marker;
-  //       next();
-  //     })
-  //     .catch(next)
-  // })
-
-
-  // .get((req, res) => [
-  //   res.json(serializeMarker(res.marker))
-  // ])
-
-
 module.exports = markersRouter;
