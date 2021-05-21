@@ -39,4 +39,4 @@ Deployed via Heroku
 - - POST - creates a new marker
 ```
 
-<img src="./images/routes.jpeg" alt="wanderer login page" width="450" >
+<img src="./images/router.jpeg" alt="wanderer login page" width="450" >
