@@ -1,26 +1,40 @@
-# Express Boilerplate!
+# Wanderer - API
 
-This is a boilerplate project used for starting new projects!
+Track your family and friends, without tracking your family and friends.
 
-## Set up
+Live version: (https://wanderer.vercel.app/)
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## Introduction 
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+Wanderer was developed to bridge the gap between safety and privacy. Location awareness of friends and family can be a great safety tool. But knowing their exact location at all times can sometimes be a breach of privacy. Wanderer allows users to decide when to share their location with others, leaving a trail of breadcrumbs with their whereabouts.
 
-## Scripts
+The main features include 
+* Summary of application features 
+* View recent locations of members 
+* Add your location
 
-Start the application `npm start`
 
-Start nodemon for the application `npm run dev`
+## Technologies
 
-Run the tests `npm test`
+* Node and Express  
+  * RESTful API 
+* Testing 
+  * Supertest (integration) 
+  * Mocha and Chai (unit)
+* Database 
+  * Postgres
+  * Knex.js 
+  
+## Production 
 
-## Deploying
+Deployed via Heroku
 
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's main branch.
+## API Endpoints
+
+
+### Folders Router
+```
+- /api/markers
+- - GET - gets all markers 
+- - POST - creates a new marker
+```
