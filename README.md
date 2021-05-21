@@ -38,3 +38,4 @@ Deployed via Heroku
 - - GET - gets all markers 
 - - POST - creates a new marker
 ```
+<img src="./src/images/routes.jpeg" width="450px" alt="route screenshot" />
