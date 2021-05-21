@@ -26,6 +26,10 @@ app.use('/api/markers', markersRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
 
+app.get('/', (req, res) => {
+  res.send('Hello, world!')
+})
+
 
 app.use(function errorHandler(error, req, res, next) {
   let response;
